@@ -17,6 +17,7 @@
     "lodash": "^4.17.10",
     "semantic-ui-css": "^2.3.3",
     "semantic-ui-vue": "^0.2.11",
+    "telegram-checking-authorization": "^1.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

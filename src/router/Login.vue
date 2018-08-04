@@ -9,6 +9,7 @@
 
 <script>
 import TelegramLogin from '@/components/TelegramLogin';
+import telegramCheckingAuthorization from 'telegram-checking-authorization';
 
 export default {
   components: {
@@ -18,6 +19,7 @@ export default {
     tg(user) {
       // eslint-disable-next-line
       console.log(user);
+      console.log(telegramCheckingAuthorization(user, '691398317:AAFN2zR-pjyLkzgjHsK_1fXuqf6iyYw1tPU'));
     },
   },
 };

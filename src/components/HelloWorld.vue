@@ -1,85 +1,21 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <at-steps :current='current' direction="vertical">
+      <at-step title="Promo" description="Create your first promo."></at-step>
+      <at-step title="Store" description="Setup your first store."></at-step>
+      <at-step title="Finish" description="Welcome! :-)"></at-step>
+    </at-steps>
+    <content v-if="current == 0">
+      <input class="promo" type="text" placeholder="Type your promo code" tabindex="-1">
+      <textarea class="promo" placeholder="Type or paste (⌘+V) your promo description here. This information will be shown to the user." rows="8"></textarea>
+      <at-button type="primary" size="large" @click="next()">Next</at-button>
+    </content>
+    <content v-if="current == 1">
+      <input class="promo" type="text" placeholder="Type your store name">
+      <textarea class="promo" placeholder="Type or paste (⌘+V) your store description here. This information will be shown to the user." rows="8"></textarea>
+      <at-button size="large" @click="prev()">Prev</at-button>
+      <at-button type="primary" size="large" @click="next()">Next</at-button>
+    </content>
   </div>
 </template>
 
@@ -88,40 +24,54 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      current: 0,
     };
   },
-  created() {
-    console.log(tca(
-      {
-        auth_date: 1533417261,
-        first_name: "eugen",
-        hash: "240e5baa5a75b256cfebe9065aa1b49c2865ace44734a02d235b60fce3624016",
-        id: 379669527,
-        last_name: "guriev",
-        photo_url: "https://t.me/i/userpic/320/therealguriev.jpg",
-        username: "therealguriev",
-      },
-      '691398317:AAFN2zR-pjyLkzgjHsK_1fXuqf6iyYw1tPU'
-    ));
+  methods: {
+    next() {
+      this.current++;
+    },
+    prev() {
+      this.current--;
+    },
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.hello{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+content{
+  width: 600px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.at-steps{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  bottom: 50px;
+  width: 300px;
 }
-a {
-  color: #42b983;
+
+input.promo{
+  font-size: 28px;
+  border: 0;
+  font-weight: 600;
+  width: 100%;
+}
+
+textarea.promo{
+  border: 0;
+  width: 100%;
+  font-size: 18px;
 }
 </style>

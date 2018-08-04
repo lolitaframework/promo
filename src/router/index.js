@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
 import AddStore from './AddStore';
 import Login from './Login';
+import Wizard from './Wizard';
 
 Vue.use(Router);
 
@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld,
+      component: Login,
     },
     {
       path: '/add-store',
@@ -22,6 +22,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/wizard',
+      name: 'Wizard',
+      component: Wizard,
     },
   ],
 });

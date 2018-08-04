@@ -2,7 +2,7 @@
   <div id="add-store" class="dialog">
     <Esc></Esc>
     <content>
-      <h1 class="title">Add store</h1>
+      <!-- <h1 class="title">Add store</h1>
       <sui-form-field>
         <label>Name</label>
         <sui-input placeholder="Your store" />
@@ -17,7 +17,7 @@
       </sui-form-field>
       <sui-form-field class="buttons">
         <sui-button primary>Save</sui-button>
-      </sui-form-field>
+      </sui-form-field> -->
     </content>
   </div>
 </template>

@@ -10,6 +10,7 @@
 <script>
 import TelegramLogin from '@/components/TelegramLogin';
 import telegramCheckingAuthorization from 'telegram-checking-authorization';
+import { BOT_TOKEN } from '@/config';
 
 export default {
   components: {
@@ -19,7 +20,7 @@ export default {
     tg(user) {
       // eslint-disable-next-line
       console.log(user);
-      console.log(telegramCheckingAuthorization(user, '691398317:AAFN2zR-pjyLkzgjHsK_1fXuqf6iyYw1tPU'));
+      console.log(telegramCheckingAuthorization(user, BOT_TOKEN));
     },
   },
 };

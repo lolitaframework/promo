@@ -3,13 +3,13 @@
 import '@/assets/css/semantic.css';
 import '@/assets/css/style.css';
 import Vue from 'vue';
-import SuiVue from 'semantic-ui-vue';
+import 'at-ui-style';
+import AtUI from 'at-ui';
 import App from './App';
 import router from './router';
 
-
+Vue.use(AtUI);
 Vue.config.productionTip = false;
-Vue.use(SuiVue);
 
 /* eslint-disable no-new */
 new Vue({

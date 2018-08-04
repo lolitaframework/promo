@@ -20,7 +20,10 @@ export default {
     tg(user) {
       // eslint-disable-next-line
       console.log(user);
-      console.log(telegramCheckingAuthorization(user, BOT_TOKEN));
+      console.log(telegramCheckingAuthorization(user, BOT_TOKEN), BOT_TOKEN);
+      if (telegramCheckingAuthorization(user, BOT_TOKEN)) {
+        this.$router.push('/wizard');
+      }
     },
   },
 };

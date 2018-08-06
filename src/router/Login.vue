@@ -1,9 +1,12 @@
 <template>
   <div id="login">
     <telegram-login
+      class="telegram-login"
       mode="callback"
       telegram-login="promo555_bot"
       @callback="tg" />
+
+    <div id="lolita"></div>
   </div>
 </template>
 
@@ -18,9 +21,6 @@ export default {
   },
   methods: {
     tg(user) {
-      // eslint-disable-next-line
-      console.log(user);
-      console.log(telegramCheckingAuthorization(user, BOT_TOKEN), BOT_TOKEN);
       if (telegramCheckingAuthorization(user, BOT_TOKEN)) {
         this.$router.push('/wizard');
       }
@@ -38,5 +38,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .telegram-login{
+    margin-top: -50px;
   }
 </style>

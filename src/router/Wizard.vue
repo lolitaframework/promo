@@ -13,11 +13,17 @@
       </div>
       <content v-if="current == 0">
         <input class="promo" type="text" placeholder="Type your promo code" tabindex="-1">
-        <textarea class="promo" placeholder="Type or paste (⌘+V) your promo description here. This information will be shown to the user." rows="8"></textarea>
+        <textarea
+          class="promo"
+          :placeholder="placeholder"
+          rows="8"></textarea>
       </content>
       <content v-if="current == 1">
         <input class="promo" type="text" placeholder="Type your store name">
-        <textarea class="promo" placeholder="Type or paste (⌘+V) your store description here. This information will be shown to the user." rows="8"></textarea>
+        <textarea
+          class="promo"
+          placeholder="Type or paste (⌘+V) your store description here. This information will be shown to the user."
+          rows="8"></textarea>
       </content>
     </div>
 
@@ -31,14 +37,15 @@ export default {
   data() {
     return {
       current: 0,
+      placeholder: 'Type or paste (⌘+V) your promo description here. This information will be shown to the user.',
     };
   },
   methods: {
     next() {
-      this.current++;
+      this.current += 1;
     },
     prev() {
-      this.current--;
+      this.current -= 1;
     },
   },
 };

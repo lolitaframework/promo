@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import AddStore from './AddStore';
 import Login from './Login';
 import Wizard from './Wizard';
+import Page404 from './Page404';
 
 Vue.use(Router);
 
@@ -10,7 +11,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'Login',
       component: Login,
     },
     {
@@ -27,6 +28,10 @@ export default new Router({
       path: '/wizard',
       name: 'Wizard',
       component: Wizard,
+    },
+    {
+      path: '*',
+      component: Page404,
     },
   ],
 });

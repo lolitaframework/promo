@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import AddStore from './AddStore';
 import Login from './Login';
+import Welcome from './Welcome';
 import Wizard from './Wizard';
 import Page404 from './Page404';
 
@@ -11,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Login',
-      component: Login,
+      name: 'Welcome',
+      component: Welcome,
     },
     {
       path: '/add-store',

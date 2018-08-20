@@ -16,7 +16,7 @@ deploy:
   skip_cleanup: true
   script: ".travis/deploy.sh"
   on:
-    branch: dev
+    branch: master
 before_install:
 - openssl aes-256-cbc -K $encrypted_6b0e97a6d9b1_key -iv $encrypted_6b0e97a6d9b1_iv
   -in .travis/deploy.enc -out .travis/deploy -d

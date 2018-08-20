@@ -1,8 +1,8 @@
 #!/bin/bash
 
 eval "$(ssh-agent -s)"
-chmod 600 .travis/deploy-key # Allow read access to the private key HELLLLLL222
-ssh-add .travis/deploy-key # Add the private key to SSH
+chmod 600 .travis/deploy # Allow read access to the private key HELLLLLL222
+ssh-add .travis/deploy # Add the private key to SSH
 
 # pass host authenticity check
 echo -e "Host $IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config

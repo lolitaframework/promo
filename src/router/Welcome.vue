@@ -1,6 +1,6 @@
 <template>
   <div id="welcome">
-    Welcome Ha HA
+    Welcome Ha HA :-)
   </div>
 </template>
 

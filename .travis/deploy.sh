@@ -11,7 +11,9 @@ ssh-keyscan $IP >> ~/.ssh/known_hosts
 # build frontend after deploying
 ssh deploy@$IP <<EOF
   cd $DEPLOY_DIR
+  echo "Hello1"
   git pull origin master
+  echo "Hello2"
   npm install
   npm run build
 EOF

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-eval "$(ssh-agent -s)" # Start ssh-agent cache
+eval "$(ssh-agent -s)" # Start ssh-agent
 chmod 600 .travis/deploy-key # Allow read access to the private key
 ssh-add .travis/deploy-key # Add the private key to SSH
 

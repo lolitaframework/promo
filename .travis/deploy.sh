@@ -16,7 +16,7 @@ git push deploy dev
 # build frontend after deploying
 ssh deploy@$IP <<EOF
   cd $DEPLOY_DIR
-  git pull origin master
+  git clean -xdf && git reset --hard && git pull origin master
   npm install
   npm rebuild node-sass
   npm run build

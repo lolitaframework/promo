@@ -21,11 +21,25 @@ export default {
   },
   methods: {
     tg(user) {
-      if (telegramCheckingAuthorization(user, BOT_TOKEN)) {
-        this.$router.push('/wizard');
-      }
+      this.$socket.emit(
+        'authorization',
+        user,
+        (data) => {
+          this.$store.commit('user', user);
+          if (data.first_time === true) {
+            this.$router.push('/wizard');
+          } else {
+            this.$router.push('/');
+          }
+        }
+      );
     },
   },
+  mounted() {
+    if (typeof this.$store.state.user === 'object' && this.$store.state.user !== null) {
+      this.$router.push('/');
+    }
+  }
 };
 </script>
 

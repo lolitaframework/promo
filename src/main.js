@@ -8,6 +8,7 @@ import VueSocketio from 'vue-socket.io';
 import io from 'socket.io-client';
 import App from './App';
 import router from './router';
+import store from './store/';
 
 Vue.use(AtUI);
 Vue.config.productionTip = false;
@@ -17,6 +18,7 @@ Vue.use(VueSocketio, io('http://localhost:13665/'));
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
   sockets: {
@@ -25,5 +27,8 @@ new Vue({
       console.info('Socket connected');
       window.t = this;
     },
+    notificationError(msg) {
+      this.$Notify.error(msg);
+    }
   },
 });
